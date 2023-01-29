@@ -1,0 +1,25 @@
+version: "3.0"
+
+services:
+  mosquitto:
+    container_name: mosquitto
+    image: mosquitto_configured
+    volumes:
+      - ./volumes/data:/mosquitto/data
+      - ./volumes/log:/mosquitto/log
+    ports:
+      - ${MOSQUITTO_HOST_MQTT_PORT}:1883
+    healthcheck:
+      test: ["CMD", "mosquitto_sub",
+                    "-h", "127.0.0.1",
+                    "-p", "1883",
+                    "-u", "${MOSQUITTO_USER}",
+                    "-P", "${MOSQUITTO_PASSWORD}",
+                    "-t", "topic",
+                    "-i", "probe",
+                    "-W", "3",
+                    "-E"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
