@@ -19,7 +19,7 @@ services:
                     "-i", "probe",
                     "-W", "3",
                     "-E"]
-      interval: 30s
+      interval: 1m
       timeout: 10s
       retries: 3
       start_period: 10s
