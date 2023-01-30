@@ -5,9 +5,9 @@ export
 
 build:
 	docker build \
-    	--build-arg MOSQUITTO_USER=${MOSQUITTO_USER} \
-    	--build-arg MOSQUITTO_PASSWORD=${MOSQUITTO_PASSWORD} \
-		. -t mosquitto_configured
+    	--build-arg NTO_MOSQUITTO_USER=${NTO_MOSQUITTO_USER} \
+    	--build-arg NTO_MOSQUITTO_PASSWORD=${NTO_MOSQUITTO_PASSWORD} \
+		. -t nto_mosquitto_configured
 
 run:
 	docker compose up -d

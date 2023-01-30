@@ -2,19 +2,19 @@ version: "3.0"
 
 services:
   mosquitto:
-    container_name: mosquitto
-    image: mosquitto_configured
+    container_name: nto_mosquitto
+    image: nto_mosquitto_configured
     volumes:
       - ./volumes/data:/mosquitto/data
       - ./volumes/log:/mosquitto/log
     ports:
-      - ${MOSQUITTO_HOST_MQTT_PORT}:1883
+      - ${NTO_MOSQUITTO_HOST_MQTT_PORT}:1883
     healthcheck:
       test: ["CMD", "mosquitto_sub",
                     "-h", "127.0.0.1",
                     "-p", "1883",
-                    "-u", "${MOSQUITTO_USER}",
-                    "-P", "${MOSQUITTO_PASSWORD}",
+                    "-u", "${NTO_MOSQUITTO_USER}",
+                    "-P", "${NTO_MOSQUITTO_PASSWORD}",
                     "-t", "topic",
                     "-i", "probe",
                     "-W", "3",
