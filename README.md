@@ -8,5 +8,5 @@ Example in `.env.example`.
 
 `make clean` - to clean volumes (requires sudo).
 
-## Running
+## Run
 `make run`
