@@ -14,3 +14,6 @@ run:
 
 clean:
 	rm -rf volumes/
+
+stop:
+	docker stop nto_mosquitto
