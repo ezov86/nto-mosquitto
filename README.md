@@ -13,3 +13,6 @@ Example in `.env.example`.
 
 ## Stop
 `make stop`
+
+## Stop and Delete container
+`make down`

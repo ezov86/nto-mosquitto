@@ -1,4 +1,4 @@
-.PHONY: build run clean
+.PHONY: build run clean stop down
 
 include .env
 export
@@ -17,3 +17,6 @@ clean:
 
 stop:
 	docker stop nto_mosquitto
+
+down:
+	docker compose down
