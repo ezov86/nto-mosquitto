@@ -10,3 +10,6 @@ Example in `.env.example`.
 
 ## Run
 `make run`
+
+## Stop
+`make stop`
