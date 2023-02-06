@@ -1,4 +1,4 @@
-.PHONY: build run clean
+.PHONY: build run clean stop
 
 include .env
 export
