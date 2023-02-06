@@ -7,7 +7,7 @@ build:
 	docker build \
     	--build-arg NTO_MOSQUITTO_USER=${NTO_MOSQUITTO_USER} \
     	--build-arg NTO_MOSQUITTO_PASSWORD=${NTO_MOSQUITTO_PASSWORD} \
-		. -t nto_mosquitto_configured
+		. -t nto-mosquitto
 
 run:
 	docker compose up -d
@@ -16,4 +16,4 @@ clean:
 	rm -rf volumes/
 
 stop:
-	docker stop nto_mosquitto
+	docker stop nto-mosquitto
